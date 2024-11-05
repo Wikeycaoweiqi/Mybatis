@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.mybatis.example.BlogMapper">
+    <!-- insert -->
+    <insert id="insertCar">
+        INSERT INTO T_CAR (CAR_NUM, BRAND, GUIDE_PRICE, PRODUCE_TIME, CAR_TYPE)
+        VALUES ('CN011', '现代', 160000.00, '2023-08-21', '电车');
+    </insert>
+</mapper>
