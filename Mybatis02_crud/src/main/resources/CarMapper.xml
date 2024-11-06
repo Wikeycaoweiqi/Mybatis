@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="car">
+    <!-- insert -->
+    <insert id="car.insertCar">
+        INSERT INTO T_CAR (CAR_NUM, BRAND, GUIDE_PRICE, PRODUCE_TIME, CAR_TYPE)
+        VALUES (#{carNum}, #{brand}, #{guidePrice}, #{produceTime}, #{carType});
+    </insert>
+    <!-- delete -->
+    <delete id="car.deleteCar">
+        DELETE
+        FROM T_CAR
+        WHERE ID = #{id};
+    </delete>
+    <!-- update -->
+    <update id="car.updateCar">
+        UPDATE T_CAR
+        SET CAR_NUM      = #{carNum},
+            BRAND        = #{brand},
+            GUIDE_PRICE  = #{guidePrice},
+            PRODUCE_TIME = #{produceTime},
+            CAR_TYPE     = #{carType}
+        WHERE ID = #{id};
+    </update>
+    <!-- select -->
+    <select id="car.selectCarById" resultType="com.wikeystudy.mybatis.pojo.Car">
+        SELECT * FROM T_CAR WHERE ID = #{id};
+    </select>
+    <!-- select all -->
+    <select id="car.selectAllCar" resultType="com.wikeystudy.mybatis.pojo.Car">
+        SELECT * FROM T_CAR;
+    </select>
+</mapper>
